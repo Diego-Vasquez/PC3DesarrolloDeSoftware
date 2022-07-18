@@ -136,13 +136,56 @@ En la clase cliente solo se agrega este usuario invitado a la lista de helper
 ## Pregunta 14: Dentro del método main(), utilizas una instancia de usuario invitado e intentas usar su clase auxiliar de la misma manera,¿ qué tipo de excepción te encuentras?¿Cuál es la solución?
 > Como mencionamos en la pregunta anterior, tenemos que salta el UnsupportedOperationException, el cual es el que se 
 > definio dentro del previousPaymentInfo del usuario invitado, su solución sería o bien no usar al usuario invitado,
-> o si se usa no usar el método showPreviousPayments del helper, o simplemente implementar el método dado (La opción mas razonable)
+> o si se usa no usar el método showPreviousPayments del helper (dos soluciones que en la vida real no se aplican por
+> motivos obvios), o simplemente implementar el método dado con un flujo
+> que maneje esta situación bajo los requerimientos que tengamos (La opción mas razonable).
+> por lo que se puede manejar con un if-else y así una solución pero no la mejor debido a que pueden haber mas de 
+> una clase que implemente esta interfaz y no tenga este método implementado para funcionar en nuestro codigo.
+![imagen](src/images/preg14_foreach.png)
+![imagen](src/images/preg14_failedmethod.png)
 
-## Pregunta 15
-## Pregunta 16
-## Pregunta 17
-## Pregunta 18
 
+## Pregunta 15: Todo lo anterior Lo más importante es que viola el OCP cada vez que modifica una clase existente que usa esta cadena if-else. Entonces, busquemos una mejor solución.
+> Para poder solucionar esta situación podemos dividir la interfaz payment que tiene dos métodos a implementar, en dos
+> interfaces, cada una que contenga uno de estos métodos, de modo que cada sin importar que clase sea, podremos saber 
+> que si implementa dicho método, podriamos tener un mejor contro de las clases que realmente esten implementando dichos
+> métodos, y para este caso particular poder hacer un mejor manejo de esto con la estructura if-else. Las 
+> implementaciones en las siguientes preguntas.
+## Pregunta 16: En el próximo programa, eliminaremos el método newPayment() de la interfaz de payment. Coloca este método en otra interfaz llamada NewPayment. Como resultado, ahora tienes dos interfaces con las operaciones específicas. Dado que todos los tipos de usuarios pueden generar una nueva solicitud de pago, las clases concretas de RegisteredUserPayment y GuestUserPayment implementan la interfaz NewPayment.
+Haciendo las implementaciones que se pide tenemos que borramos el Payment y creamos las siguientes interfaces que
+en un comienzo estaban en una sola interfaz
+
+Interfaz previousPayment
+![imagen](src/images/preg16_previousPayment.png)
+
+Interfaz newPayment
+![imagen](src/images/preg16_newPayment.png)
+
+luego se hicieron los siguientes cambios, el registerUser solo se cambio las interfaces que implementan, que ahora
+son las dos nuevas interfaces en las que se dividio la anterior
+![imagen](src/images/preg16_registeredUser.png)
+
+En cuanto a guestUser, implementa solo de NewPayment, por lo que con esto se esta aplicando el principio solid LSP, dado
+que ya no se esta implementando el método que estaba dando error
+![imagen](src/images/preg16_guestUser.png)
+Esto se complementa con la implementación en PaymentHelper, en donde realmente aplicamos este principio, aca se hace un
+manejo a través de métodos en donde dependiendo de si implementa uno u otro método se agrega en uno u otro método, esto
+con lo que asi podemos manejar multiples clases que implemente cualquiera de estos dos y podemos manejarlos sin las
+complicaciones anteriores que se daban.
+![imagen](src/images/preg16_paymentHelper.png)
+
+Ahora, en el código del cliente que se nos dio con el examen, que es el siguiente
+![imagen](src/images/preg16_client.png)
+Con esto, como se ve se obtiene el resultado deseado.
+![imagen](src/images/preg16_output.png)
+
+## Pregunta 17: ¿Cuáles son los cambios clave?
+Como mencionamos, ahora en ves de aceptar una interface general, ahora acepta una interface mas especifica
+para el metodo que añade usuarios a una de sus listas, donde cada lista maneja dependiendo del tipo de interfaz que
+implementa. Lo que soluciona el problema visto anteriormente visto
+## Pregunta 18: Ten que aquí el enfoque clave estaba en el principio LSP, nada más. Podrías refactorizar fácilmente el código del cliente usando algún método estático. Por ejemplo realiza una modificación donde utilizas un método estático para mostrar todas las solicitudes de pago y utilizar este método siempre que lo necesites.
+Se puede implementar un método estatico que ejecute los dos métodos de facturas por pagar y facturas por facturar, que
+se puede implementar de forma estatica y se podria usar cada vez que el cliente quiera revisar las facturas.
 # Modulo 4
 ## Pregunta 19
 ### Clases base vs interfaces:
