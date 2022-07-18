@@ -72,7 +72,7 @@ Esta acción genera inconvenientes si deseamos añadir algún departamento más,
 ### Clases base vs interfaces:
 Un tipo de interfaz es una descripción parcial de un valor, potencialmente compatible con muchos tipos de objetos. Utilice clases base en lugar de interfaces siempre que sea posible. Desde una perspectiva de control de versiones, las clases son más flexibles que las interfaces. Con una clase, puede enviar la versión 1.0 y luego en la versión 2.0 agregar un nuevo método a la clase. Mientras el método no sea abstracto, las clases derivadas existentes seguirán funcionando sin cambios.
 Según el alcance de la estructura de código, se implementa unas algunas líneas dentro de cada una de las clases con el fin de imprimir el tipo de faz
-`package NoSolid.ISP;
+```package NoSolid.ISP;
 
 
 interface  Fax {
@@ -88,7 +88,7 @@ class EFax implements Fax {
         System.out.println("impresora de marca EFax");
     }
 }
-`
+```
 
 ## Pregunta 20
 Dado que las interfaces no admiten la herencia de implementación, el patrón que se aplica a las clases no se aplica a las interfaces. Agregar un método a una interfaz equivale a agregar un método abstracto a una clase base; cualquier clase que implemente la interfaz se interrumpirá porque la clase no implementa el nuevo método.
@@ -112,7 +112,7 @@ Una solución simple seria implementar una tercera interfaz con un método el cu
 
 
 ## Pregunta 22
-`package NoSolid.ISP;
+```package NoSolid.ISP;
 
 interface Impresora {
     void printDocument();
@@ -120,7 +120,7 @@ interface Impresora {
     void sendFax();
 
 }
-`
+```
 
 Como se menciona anteriormente implícitamente esta forma de código no es la última debido a que si se tiene objetos  con diferentes métodos que son atributo propio este se vea afectado al tener la necesidad de implementar un método el cual no tenga esta característica 
 ## Pregunta 23
