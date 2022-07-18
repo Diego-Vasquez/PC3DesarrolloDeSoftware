@@ -148,6 +148,8 @@ Se crea una lista de tipo impresora en cual guardara los métodos de cada una de
 
 
 ## Pregunta 25
+En esta pregunta nos piden implementar una funcion lamdba:
+Esto basicamente nos imprime los System.out.println de cada uno de los tipos de impresoras.
 
 ![imagen](https://user-images.githubusercontent.com/79879867/179445068-16508eec-55c7-4ac5-b6d6-62248ec3a160.png)
 
