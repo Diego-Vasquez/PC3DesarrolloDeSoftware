@@ -1,5 +1,5 @@
 package Solid.OCP;
-/*
+
 abstract class Estudiante {
     String name;
     String regNumber;
@@ -16,6 +16,4 @@ abstract class Estudiante {
         return ("Nombre: " + name + "\nNumero Reg: " + regNumber + "\nDept:" + department + "\nMarks:"
                 + score + "\n");
     }
-
 }
-*/

@@ -1,5 +1,0 @@
-package Solid.OCP;
-
-/*
-...completa
-*/

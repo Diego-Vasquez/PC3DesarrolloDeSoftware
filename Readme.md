@@ -82,12 +82,17 @@ Mostrando los resultados:
 
 ![imagen](src/images/Pregunta6-1.PNG)
 
-Explicando los pasos 
+Explicando los pasos
 
 ![imagen](src/images/Pregunta6-2.PNG)
 
 Podemos ver que en la clase cliente se crea una lista de tipo Estudiante que hace un llamado a la funcion enrollStudents() la cual crea y agrega objetos de tipo estudiante devolviendo una lista con los objetos añadidos.
 
+![imagen](src/images/Pregunta6-3.PNG)
+
+Se imprimen los atributos de cada objeto de la lista de tipo estudiantes, verificamos tambien que las distinciones de los objetos mediante el metodo evaluateDistinction() que se encuentra en la clase DistintionDecider, el cual nos indica que dependiendo el departamento al que pertenezca y al score, nos dirá si dicho estudiante recibió una distincion.
+
+![imagen](src/images/Pregunta6-4.PNG)
 
 ## Pregunta 7
 
@@ -95,10 +100,53 @@ El principal problema que se tiene con este diseño es que cuando llamamos a la 
 Esta acción genera inconvenientes si deseamos añadir algún departamento más, puesto que tendríamos que, realizar varias comprobaciones para cada una de ellas, como una posible solución sería generar una subclase de estudiante, en la cual ya se tenga el método que nos indique si el estudiante merece una distinción
 
 ## Pregunta 8
+
+Crear la interfaz distinctionDecider que contenga el método EvaluationDistinction
+
+![imagen](src/images/Pregunta8-1.PNG)
+
 ## Pregunta 9
+
+Completando los codigos ArtsDistinctionDecider y ScienceDistinctionDecider que implementan esta interfaz y sobreescriben el metodo evaluateDistinction
+![imagen](src/images/Pregunta9-1.PNG)
+![imagen](src/images/Pregunta9-2.PNG)
+
 ## Pregunta 10
+
+Mostrando resultados:
+
+![imagen](src/images/Pregunta10-1.PNG)
+
+Explicando los pasos:
+
+- Estudiante.java         
+  La clase abstacta solo declara parametros que utilizaremos para definir cualquier objeto de tipo (name, regName,score)
+
+- ArteEstudiante.java y CienciaEstudiante.java  
+  Estas 2 clases heredan de la clase abstracta estudiante.
+
+- DistiontionDecider.java  
+  Es la interfaz que declara el metodo que utilizaran las clases implementadas
+
+- ScienceDistinctionDecider.java y ArtsDistinctionDecider.java
+
+  Son clases que implementan la interfaz DistintionDecider y nos indica si el estudiante obtiene una distincion.
+  
+- Cliente.java
+  ![imagen](src/images/Pregunta10-2.PNG)
+
+Podemos ver que en el metodo main, se creará dos listas de alumnos, uno del departamento de ciencias y el segundo del departamento de arte
+mediante los metodos enrollScienceStudents() y enrollArtsStudents() respectivamente. Los dos metodos crean y agregan objetos de tipo Estudiante a cada una de las listas.
+Una vez agregados los objetos pasamos a imprimir ambas listas, para finalmente una vez obtenida las listas utilizar las clases 
+"ScienceDistinctionDecider" y "ArtsDistinctionDecider" para poder determinar a los estudiantes que han obtenido alguna distincion en sus departamentos. 
+
+
 ## Pregunta 11
 
+Las principales ventajas del diseño son:
+- En caso deseemos agregar un departamento nuevo, ahora con su respectiva verificacion, crearemos una nueva lista en la clase cliente con los respectivos estudiantes, en la clase cliente con los respectivos alumnos, y para la verificacion se crearía una clase nueva que herede de la interfaz  DistintionDecide simplificacion de esta manera la declaracion
+
+- En caso deseemos agregar un estudiante, se puede hacer directamente en la listas de cada departamento, para así evitar una comprobacio  extra.
 # Modulo 3
 ## Pregunta 12: Muestra la salida y explica los resultados en función de los métodos entregados
 Tenemos que la clase cliente dada como sigue
