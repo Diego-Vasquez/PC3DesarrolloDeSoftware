@@ -155,6 +155,9 @@ Esto basicamente nos imprime los System.out.println de cada uno de los tipos de 
 
 ## Pregunta 26
 
+Puede ver que para evitar las excepciones en tiempo de ejecución, necesitaba comentar una línea de código, comentar un código  no utilizado es algo que se busca evitar, porque cualquier cambio realizado en una clase este afecta a las demás clases.
+Pero aparentemente el codigo esta bien desarrollado porque imprime lo que se tiene en cada uno de las caracteristicas de la impresora.
+
 ![imagen](https://user-images.githubusercontent.com/79879867/179445078-4b6749a5-bf1e-4725-afa0-7de0969eeefc.png)
 
 ## Pregunta 27
