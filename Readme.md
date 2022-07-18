@@ -37,6 +37,11 @@ Process finished with exit code 0
 
 # Modulo 2
 ## Pregunta 5
+
+Como podemos observar en el enunciado, para el método displayResult() nos muestra los detalles necesarios para un estudiante (nombre, número de registro, calificaciones), sin embargo en la clase estudiante, podemos ver el método sobrescrito toString() el cual nos muestra detalles del estudiante, lo cual no sería óptimo, por lo tanto sería innecesario implementar dicho método en la clase estudiante.
+Ahora para el método evaluateDistintion() observamos que en la clase DistintionDecider tenemos una lista de String para los departamentos( Ciencias de la Computación, Física, Historia, Ingles), ahora si se desearía añadir este método a la clase estudiante, se debería definir también estas listas, sin embargo hacer esta operación en cada llamado generaría la creación de un lista nueva. 
+
+
 ## Pregunta 6
 ## Pregunta 7
 ## Pregunta 8
