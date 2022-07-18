@@ -28,6 +28,6 @@ public class Cliente {
         SeniorityChecker seniorityChecker = new SeniorityChecker();
         string Rango = seniorityChecker.CheckSeniority(emp.experienceInYears);
         System.out.println("Este empleado es un" + " empleado " +
-                Rango)
+                Rango);
     }
 }
