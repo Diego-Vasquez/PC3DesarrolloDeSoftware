@@ -1,4 +1,4 @@
-# Calificada3-Grupo1
+# Grupo 1 - PC3
 
 ## Integrantes
 
