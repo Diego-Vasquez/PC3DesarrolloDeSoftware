@@ -50,6 +50,25 @@ La clase tiene mucha lógica interconectada en la cual nos costaría mucho corre
 
 ## Pregunta 4
 
+![imagen](src/images/preg4.jpeg)
+
+Demostracion de SRP  
+Nombre del empleado: Abejita,Jessica  
+Este empleado tiene 7.5 años de experiencia.  
+El ID del empleado es: J185  
+Este empleado es un empleado senior  
+
+*******
+
+Nombre del empleado: Smart,Chalito  
+Este empleado tiene 3.2 años de experiencia.  
+El ID del empleado es: C196  
+Este empleado es un empleado junior  
+  
+Process finished with exit code 0  
+
+Podemos ver que son imprime un formato parecido a cuando no aplicamos Single Responsibility Principle; sin embargo, como dijimos antes, ahora nos será mucho más fácil hacer cambios en el código, además de que la lógica es más fácil de entender.
+
 # Modulo 2
 ## Pregunta 5
 
@@ -126,9 +145,44 @@ Las principales ventajas del diseño son:
 
 - En caso deseemos agregar un estudiante, se puede hacer directamente en la listas de cada departamento, para así evitar una comprobacio  extra.
 # Modulo 3
-## Pregunta 12
-## Pregunta 13
-## Pregunta 14
+## Pregunta 12: Muestra la salida y explica los resultados en función de los métodos entregados
+Tenemos que la clase cliente dada como sigue
+![imagen](src/images/preg12_clien.png)
+nos genera la siguiente salida
+![imagen](src/images/preg12_output.png)
+> De esta ejecución podemos ver que se instancia PaymentHelper, con el constructor por defecto que se hereda de Object,
+> que para nuestro caso solo hara que su lista payments de la instancia se setee con una lista vacia.
+> Ahora, luego de eso se instancian los dos registros de usuarios (RegisterdUserPayment, que implementa de Payment, 
+> es decir, implementa tanto a previousPaymentInfo como newPayment)
+> , Abejita y Chalito, donde se usa el constructor
+> definido en su clase que en este caso solo recibe el nombre del usuario y lo setea en su variable de instancia name
+> Luego, en la instancia helper, se agrega los dos usuarios creados con el método de instancia addUser del helper, este
+> hara que se añada a la lista de Payments, recordando que tenemos que RegisterdUserPayment implementa esta interfaz,
+> por lo que no tiene problema para funcionar.
+> 
+> Finalmente el helper ejecuta su metodo showPreviousPayments que iterara en su lista de Payments donde ejecutara para
+> cada payment (para nuestro caso los usuarios) de su lista e irá mostrando su informacion previa con el método
+> previousPaymentInfo propia de la interfaz payment que deben tener implementado, y en el caso del RegisterdUserPayment,
+> aca muestra solo un mensaje sin mas.
+> Luego el helper ejecuta processNewPayments que al igual que el método anterior itera sobre sus payments llamando a los
+> métodos newPayment de cada uno, y que para la clase RegisterdUserPayment es un particular que contiene su nombre.
+
+## Pregunta 13: Ahora supongamos que tienes un nuevo requisito que dice que necesitas admitir usuarios invitados en el futuro. Puedes procesar la solicitud de pago de un usuario invitado, pero no muestra su último detalle de pago. Entonces, crea la siguiente clase que implementa la interfaz de pago de la siguiente manera:
+Se implemento el siguiente código, con el código que se nos da en la actividad y la implementacion es similar a la de
+RegisterdUserPayment, solo que en el método previousPaymentInfo lanzará un error.
+![imagen](src/images/preg13_guestUser.png)
+En la clase cliente solo se agrega este usuario invitado a la lista de helper
+![imagen](src/images/preg13_client.png)
+
+> En la ejecución de prueba con el codigo mostrado tenemos que efectivamente como se definió, el método 
+> showPreviousPayments itera sobre los payments ejecutando sus métodos, que para el caso del usuario invitado, su
+> previousPaymentInfo esta programado para que lance un error, por ello salta el error como se esperaba.
+
+## Pregunta 14: Dentro del método main(), utilizas una instancia de usuario invitado e intentas usar su clase auxiliar de la misma manera,¿ qué tipo de excepción te encuentras?¿Cuál es la solución?
+> Como mencionamos en la pregunta anterior, tenemos que salta el UnsupportedOperationException, el cual es el que se 
+> definio dentro del previousPaymentInfo del usuario invitado, su solución sería o bien no usar al usuario invitado,
+> o si se usa no usar el método showPreviousPayments del helper, o simplemente implementar el método dado (La opción mas razonable)
+
 ## Pregunta 15
 ## Pregunta 16
 ## Pregunta 17
