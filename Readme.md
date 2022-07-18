@@ -43,6 +43,11 @@ Es decir, la clase Empleado tienes tres responsabilidades, mostrar los detalles 
 La clase tiene mucha lógica interconectada en la cual nos costaría mucho corregir los errores, además de que a medida que crece el código, también lo hace la lógica, lo que hace que sea aún más difícil entender lo que está pasando.
 
 ## Pregunta 3
+
+![imagen](src/images/preg3_checker.jpeg)
+
+![imagen](src/images/preg3_generador.jpeg)
+
 ## Pregunta 4
 
 # Modulo 2
