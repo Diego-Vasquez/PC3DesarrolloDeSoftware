@@ -37,6 +37,9 @@ El método CheckSeniority() de la clase Empleado revisar si la experiencia del e
 También vemos que el método generateEmpId() de la clase Empleado genera ID's de los empleados de la siguiente forma, primero toma la primera letra del nombre del empleado y luego lo une a un número random menor a mil.  
 
 ## Pregunta 2
+
+Podemos ver que los metodos displayEmpDetail(), checkSeniority y generateEmpId estan en una sola clase lo cual hace que no cumpla la idea detrás del SRP (que cada clase, módulo o función en un programa debe tener una responsabilidad/propósito en un programa). Es decir la clase Empleado tienes tres resposabilidades, mostrar los detalles de un empleado, generar una identificación de empleado y revisar los años de experiencia del empleado. El código funcionará bien, pero dará lugar a algunos desafíos. No podemos hacer que este código sea reutilizable para otras clases u objetos. La clase tiene mucha lógica interconectada en la cual nos costaría mucho corregir los errores, además de que a medida que crece el código, también lo hace la lógica, lo que hace que sea aún más difícil entender lo que está pasando.  
+
 ## Pregunta 3
 ## Pregunta 4
 
@@ -257,21 +260,7 @@ la instancia de la bd), que para este caso solo hace una impresión de consola d
 > de OracleDatabase previa para probar el funcionanmiento de InterfazUsuario. También es evidente de que ante un cambio 
 > que se de en la clase OracleDatabase (como el cambiar ciertas funcionalidades o el querer usar otra db) harían que
 > también se vea afectada.
-## Pregunta 33: Implementa la clase InterfazUsuario. La segunda parte del DIP sugiere hacer la interfaz de la base de datos considerando la necesidad de la clase InterfazUsuario.
-Hemos realizado las siguientes implementaciones de la interface BaseDatos y la implementación OracleDatabase
-![imagen](src/images/preg33_interface.png)
-![imagen](src/images/preg33_oracledb.png)
-> Acá tenemos la implementación usando el principio SOLID de DIP, donde por un lado
-> nosotros aca aseguramos con esta implementación que la clase interfaz usuario ahora ya no dependa 
-> de la clase OracleJava, sino que bajo la abstracción (primera parte del princio DIP) permite
-> que esto sea mas flexible a los cambios, dado que ahora solo hace uso de la abstracción, la cual es
-> implementada por la base Oracle y puede ser implementada por cualuier otra clase y podra tener mas garantias
-> de que el software no se caerá tan facil
->
-> Por otro lado tenemos que también aplicamos la segunda parte de DIP, dado que hacemos que los detalles dependan de 
-> la abstracción, en este caso los detalles como de que sea publica se realiza dentro de la implementacion. Lo que en 
-> resumen esta nueva implementación es mucho mejor.
-
+## Pregunta 33
 ## Pregunta 34
 ## Pregunta 35
 ## Pregunta 36
