@@ -90,7 +90,7 @@ Podemos ver que en la clase cliente se crea una lista de tipo Estudiante que hac
 
 ![imagen](src/images/Pregunta6-3.PNG)
 
-Se imprimenlos atributos de cada objeto de la lista de tipo estudiantes, verificamos tambien que las distinciones de los objetos mediante el metodo evaluateDistinction() que se encuentra en la clase DistintionDecider, el cual nos indica que dependiendo el departamento al que pertenezca y al score, nos dirá si dicho estudiante recibió una distincion.
+Se imprimen los atributos de cada objeto de la lista de tipo estudiantes, verificamos tambien que las distinciones de los objetos mediante el metodo evaluateDistinction() que se encuentra en la clase DistintionDecider, el cual nos indica que dependiendo el departamento al que pertenezca y al score, nos dirá si dicho estudiante recibió una distincion.
 
 ![imagen](src/images/Pregunta6-4.PNG)
 
@@ -135,7 +135,10 @@ Explicando los pasos:
 - Cliente.java
   ![imagen](src/images/Pregunta10-2.PNG)
 
-
+Podemos ver que en el metodo main, se creará dos listas de alumnos, uno del departamento de ciencias y el segundo del departamento de arte
+mediante los metodos enrollScienceStudents() y enrollArtsStudents() respectivamente. Los dos metodos crean y agregan objetos de tipo Estudiante a cada una de las listas.
+Una vez agregados los objetos pasamos a imprimir ambas listas, para finalmente una vez obtenida las listas utilizar las clases 
+"ScienceDistinctionDecider" y "ArtsDistinctionDecider" para poder determinar a los estudiantes que han obtenido alguna distincion en sus departamentos. 
 
 
 ## Pregunta 11
