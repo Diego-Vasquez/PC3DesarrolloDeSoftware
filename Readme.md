@@ -167,6 +167,10 @@ Pero aparentemente el codigo esta bien desarrollado porque imprime lo que se tie
 
 ## Pregunta 27
 
+La implementación de una interfaz más nos permite desarrollar una mejor gestión de los atributos de cada tipo de impresora.
+La separación de   nos permite llamar la interfaz que necesitemos para darle ciertas características a cada impresora esto evita  tener que implementar un excepción o  comentar líneas de código que no son necesarias. Además que esto también nos permite tener mejor ordenado el código. Existe un método  que te permite delegar  e implementar el ISP, sin embargo esto hace que aumente el  tiempo de ejecución  de una aplicación, afectando el rendimiento.
+
+
 ![imagen](https://user-images.githubusercontent.com/79879867/179445088-3ddf5b79-a8c1-43a9-864d-dbf40550b5bf.png)
 
 ![imagen](https://user-images.githubusercontent.com/79879867/179447478-6ce75bca-fbec-4b10-afd2-bb1af4d1d304.png)
