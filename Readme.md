@@ -49,6 +49,10 @@ Ahora para el método evaluateDistintion() observamos que en la clase Distintion
 
 ## Pregunta 6
 ## Pregunta 7
+
+El principal problema que se tiene con este diseño es que cuando llamamos a la clase distintionDecider, el método que utiliza para verificar si se obtiene una distinción, generará 2 listas de los departamentos a los que pertenecen cada uno.
+Esta acción genera inconvenientes si deseamos añadir algún departamento más, puesto que tendríamos que, realizar varias comprobaciones para cada una de ellas, como una posible solución sería generar una subclase de estudiante, en la cual ya se tenga el método que nos indique si el estudiante merece una distinción
+
 ## Pregunta 8
 ## Pregunta 9
 ## Pregunta 10
