@@ -16,14 +16,14 @@
 
 Demostracion sin SRP  
 Nombre del empleado: Abejita,Jessica  
-Este empleado tiene 7.5 a�os de experiencia.  
+Este empleado tiene 7.5 años de experiencia.  
 El ID del empleado es: J189  
 Este empleado es un empleado senior  
 
 ----
 
 Nombre del empleado: Smart,Chalito  
-Este empleado tiene 3.2 a�os de experiencia.  
+Este empleado tiene 3.2 años de experiencia.  
 El ID del empleado es: C876  
 Este empleado es un empleado junior  
   
