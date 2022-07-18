@@ -90,12 +90,29 @@ Como se mencionó en la pregunta 22 una de las formas más viables es implementa
 ##Pregunta 28
 ##Pregunta 30
 # Modulo 5
-##Pregunta 31
-##Pregunta 32
-##Pregunta 33
-##Pregunta 34
-##Pregunta 35
-##Pregunta 36
+## Pregunta 31: Muestra la salida y explica los resultados en función de los métodos entregados
+En el código que se nos indica tenemos los siguientes códigos, donde el cliente usa la interfaz de usuario y guarda un
+dato
+Clase Cliente
+
+![imagen](src/images/preg31_client.png)
+Clase OracleDatabase
+![imagen](src/images/preg31_db.png)
+Clase InterfazUsuario
+![imagen](src/images/preg31_userInterface.png)
+dando finalmente la siguiente salida
+![imagen](src/images/preg31_output.png)
+Lo que ha hecho el código por el lado del cliente es que el cliente inicializa la interfaz de usuario
+y solicita que se guarde una ID de un empleado. Ahora, internamente cuando se instanció la clase interfaz de usuario en
+su constructor alberga la instrucción de inicializar una db, es por ello que cuando el cliente solicita guardar esta id
+a través de la interfaz (usando el método SaveEmployeeID de la interfaz), dicha interfaz hace que la base de datos
+inicie el proceso de guardado (es decir, el método de la interfaz a su vez llama al método SaveEmployeeInDatabase de 
+la instancia de la bd), que para este caso solo hace una impresión de consola de la id que se le pasó.
+## Pregunta 32
+## Pregunta 33
+## Pregunta 34
+## Pregunta 35
+## Pregunta 36
 
 
 ## Integrantes
