@@ -53,6 +53,18 @@ Ahora para el método evaluateDistintion() observamos que en la clase Distintion
 
 
 ## Pregunta 6
+
+Mostrando los resultados:
+
+![imagen](src/images/Pregunta6-1.PNG)
+
+Explicando los pasos 
+
+![imagen](src/images/Pregunta6-2.PNG)
+
+Podemos ver que en la clase cliente se crea una lista de tipo Estudiante que hace un llamado a la funcion enrollStudents() la cual crea y agrega objetos de tipo estudiante devolviendo una lista con los objetos añadidos.
+
+
 ## Pregunta 7
 
 El principal problema que se tiene con este diseño es que cuando llamamos a la clase distintionDecider, el método que utiliza para verificar si se obtiene una distinción, generará 2 listas de los departamentos a los que pertenecen cada uno.
