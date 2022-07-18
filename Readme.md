@@ -118,12 +118,93 @@ Líneas de código
 Como se mencionó en la pregunta 22 una de las formas más viables es implementar un segundo interfaz y separar  más el código  con el fin de evitar la necesidad de llamar un método que no tiene la impresora.
 
 
-##Pregunta 24
-##Pregunta 25
-##Pregunta 26
-##Pregunta 27
-##Pregunta 28
-##Pregunta 30
+## Pregunta 24
+
+
+![imagen](https://user-images.githubusercontent.com/79879867/179445024-64c07e17-aaa9-473f-ad83-a1bc9f21c953.png)
+![imagen](https://user-images.githubusercontent.com/79879867/179445033-e268b435-86b1-4c98-997c-e0ef618e549b.png)
+
+Forma 2:
+Se crea una lista de tipo impresora en cual guardara los métodos de cada una de la impresoras  y mediante una un recorro  la lista  e imprimo la función imprimir.
+
+![imagen](https://user-images.githubusercontent.com/79879867/179445057-fa267626-d6ca-4766-ba58-cfe977b6c381.png)
+
+
+## Pregunta 25
+
+![imagen](https://user-images.githubusercontent.com/79879867/179445068-16508eec-55c7-4ac5-b6d6-62248ec3a160.png)
+
+## Pregunta 26
+
+![imagen](https://user-images.githubusercontent.com/79879867/179445078-4b6749a5-bf1e-4725-afa0-7de0969eeefc.png)
+
+## Pregunta 27
+
+![imagen](https://user-images.githubusercontent.com/79879867/179445088-3ddf5b79-a8c1-43a9-864d-dbf40550b5bf.png)
+
+## Pregunta 28
+Un método predeterminado  nos permite definir una implementación predeterminada para un método interfaz. Básicamente es proporcionar un medio por el cual las interfaces pudieran expandirse sin romper el código que existe.
+
+## Pregunta 29
+Un método predeterminado de la interfaz se define de forma similar a la forma en que una clase define un método. La principal diferencia es que la declaración está precedida por la palabra clave default. Por ejemplo, considere esta interfaz simple
+```
+public interface MiInterfaz {
+    //Esto es una declaración normal de un método
+    //Esto no define la implementación de default
+    int getUsuario();
+    //Esto es un método default
+    default int getAdmin(){
+        return 1;
+    }
+}
+
+```
+Si una clase implementadora no proporciona su propia implementación, se utiliza el valor predeterminado
+## Pregunta 30
+
+Si des comentamos la siguiente línea y  comentamos la excepción en la clase básica nos daría como resultado.
+```
+package NoSolid.ISP;
+class ImpresoraBasica implements Impresora {
+    @Override
+    public void printDocument() {
+        System.out.println("La impresora imprime un documento.");
+        System.out.println("===================");
+    }
+    @Override
+    public void sendFax() {
+        //throw new UnsupportedOperationException();
+    }
+}
+
+
+```
+
+```
+class Cliente {
+    public static void main(String[] args) {
+        System.out.println("Demostracion sin ISP");
+        Impresora impresora = new ImpresoraAvanzada();
+        Fax fax_avanzada = new LanFax();
+        impresora.printDocument();
+        impresora.sendFax();
+        fax_avanzada.typeFax();
+        impresora = new ImpresoraBasica();
+        Fax fax_basica = new EFax();
+        impresora.printDocument();
+        fax_basica.typeFax();
+        impresora.sendFax();// Lanza un error
+    }
+}
+
+
+```
+![imagen](https://user-images.githubusercontent.com/79879867/179444952-4e0212df-7c37-4856-808b-2490f1c7ee98.png)
+
+
+ Si recordamos una excepción es un evento, que ocurre durante la ejecución de un programa, que interrumpe el flujo normal de las instrucciones del programa.
+ 
+ 
 # Modulo 5
 ## Pregunta 31: Muestra la salida y explica los resultados en función de los métodos entregados
 En el código que se nos indica tenemos los siguientes códigos, donde el cliente usa la interfaz de usuario y guarda un
