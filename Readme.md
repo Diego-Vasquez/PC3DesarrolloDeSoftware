@@ -31,6 +31,11 @@ Este empleado es un empleado junior
   
 Process finished with exit code 0  
 
+
+Revisando el código podemos ver que en la clase cliente creamos dos instancias de tipo Empleado, además de que usaremos métodos de estos que explicaremos a continuación.  
+El método CheckSeniority() de la clase Empleado revisar si la experiencia del empleado es mayor o no a 5, si es asi se considera un empleado "senior" pero si tiene menos de 5 años de experiencia lo clasificaremos como un empleado "junior".  
+También vemos que el método generateEmpId() de la clase Empleado genera ID's de los empleados de la siguiente forma, primero toma la primera letra del nombre del empleado y luego lo une a un número random menor a mil.  
+
 ##Pregunta 2
 ##Pregunta 3
 ##Pregunta 4
