@@ -81,8 +81,27 @@ Esta acción genera inconvenientes si deseamos añadir algún departamento más,
 ## Pregunta 11
 
 # Modulo 3
-## Pregunta 12
-## Pregunta 13
+## Pregunta 12: Muestra la salida y explica los resultados en función de los métodos entregados
+Tenemos que la clase cliente dada como sigue
+![imagen](src/images/preg12_clien.png)
+nos genera la siguiente salida
+![imagen](src/images/preg12_output.png)
+> De esta ejecución podemos ver que se instancia PaymentHelper, con el constructor por defecto que se hereda de Object,
+> que para nuestro caso solo hara que su lista payments de la instancia se setee con una lista vacia.
+> Ahora, luego de eso se instancian los dos registros de usuarios, Abejita y Chalito, donde se usa el constructor
+> definido en su clase que en este caso solo recibe el nombre del usuario y lo setea en su variable de instancia name
+> Luego, en la instancia helper, se agrega los dos usuarios creados con el método de instancia addUser del helper, este
+> hara que se añada a la lista de Payments, recordando que tenemos que RegisterdUserPayment implementa esta interfaz,
+> por lo que no tiene problema para funcionar.
+> 
+> Finalmente el helper ejecuta su metodo showPreviousPayments que iterara en su lista de Payments donde ejecutara para
+> cada payment (para nuestro caso los usuarios) de su lista e irá mostrando su informacion previa con el método
+> previousPaymentInfo propia de la interfaz payment que deben tener implementado, y en el caso del RegisterdUserPayment,
+> aca muestra solo un mensaje sin mas.
+> Luego el helper ejecuta processNewPayments que al igual que el método anterior itera sobre sus payments llamando a los
+> métodos newPayment de cada uno, y que para la clase RegisterdUserPayment es un particular que contiene su nombre.
+
+## Pregunta 13:
 ## Pregunta 14
 ## Pregunta 15
 ## Pregunta 16
