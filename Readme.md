@@ -13,6 +13,22 @@
 
 # Modulo 1
 ##Pregunta 1
+
+Demostracion sin SRP  
+Nombre del empleado: Abejita,Jessica  
+Este empleado tiene 7.5 a�os de experiencia.  
+El ID del empleado es: J189  
+Este empleado es un empleado senior  
+
+----
+
+Nombre del empleado: Smart,Chalito  
+Este empleado tiene 3.2 a�os de experiencia.  
+El ID del empleado es: C876  
+Este empleado es un empleado junior  
+  
+Process finished with exit code 0  
+
 ##Pregunta 2
 ##Pregunta 3
 ##Pregunta 4
