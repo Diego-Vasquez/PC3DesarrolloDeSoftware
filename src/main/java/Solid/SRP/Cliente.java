@@ -20,14 +20,13 @@ public class Cliente {
         emp.displayEmpDetail();
 
         //Genera el ID
-        EmployeeIdGenerator idGenerator = new EmployeeIdGenerator();
-        string empId = idGenerator.GenerateEmployeeId(emp.empFirstName);
-        System.out.println("El ID del empleado es: "+ emp.generateEmpId(emp.firstName));
+        GeneradorIDEmpleado idGenerator = new GeneradorIDEmpleado();
+        String empId = idGenerator.generateEmpId(emp.firstName);
+        System.out.println("El ID del empleado es: "+ empId);
 
         // Verifica el nivel laboral
-        SeniorityChecker seniorityChecker = new SeniorityChecker();
-        string Rango = seniorityChecker.CheckSeniority(emp.experienceInYears);
-        System.out.println("Este empleado es un" + " empleado " +
-                Rango)
+        SeniorityChecker SeniorityChecker = new SeniorityChecker();
+        String Rango = SeniorityChecker.checkSeniority(emp.experienceInYears);
+        System.out.println("Este empleado es un" + " empleado " + Rango);
     }
 }
