@@ -4,4 +4,5 @@ interface Impresora {
     void printDocument();
 
     void sendFax();
+
 }
