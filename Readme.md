@@ -273,14 +273,18 @@ la instancia de la bd), que para este caso solo hace una impresión de consola d
 > también se vea afectada.
 ## Pregunta 33: Implementa la clase InterfazUsuario. La segunda parte del DIP sugiere hacer la interfaz de la base de datos considerando la necesidad de la clase InterfazUsuario.
 Hemos realizado las siguientes implementaciones de la interface BaseDatos y la implementación OracleDatabase
+
+Creacion de la interface BaseDatos, que solo captura la abstraccion de las db sin detalles
 ![imagen](src/images/preg33_interface.png)
+Implementación de OracleDatabase, donde se dan los detalles del método implementado, asi como los detalles propios
+requeridos del mismo
 ![imagen](src/images/preg33_oracledb.png)
 > Acá tenemos la implementación usando el principio SOLID de DIP, donde por un lado
 > nosotros aca aseguramos con esta implementación que la clase interfaz usuario ahora ya no dependa
 > de la clase OracleJava, sino que bajo la abstracción (primera parte del princio DIP) permite
 > que esto sea mas flexible a los cambios, dado que ahora solo hace uso de la abstracción, la cual es
 > implementada por la base Oracle y puede ser implementada por cualuier otra clase y podra tener mas garantias
-> de que el software no se caerá tan facil
+> de que el software no se caerá tan facil, cuando la interfazUsuario utilice la interfaz.
 >
 > Por otro lado tenemos que también aplicamos la segunda parte de DIP, dado que hacemos que los detalles dependan de
 > la abstracción, en este caso los detalles como de que sea publica se realiza dentro de la implementacion. Lo que en
@@ -289,11 +293,12 @@ Hemos realizado las siguientes implementaciones de la interface BaseDatos y la i
 ## Pregunta 34: Completa todos los archivos siguientes de la sección SOLID
 Se hicieron las siguientes implementaciones
 
-clase MySQLDataBase
+clase MySQLDataBase, se ha implementado usando la interface creada BaseDatos similar a la oracle
 ![imagen](src/images/preg34_mysqldb.png)
-clase InterfazUsuario
+clase InterfazUsuario, se ha cambiado el tipo de dato de la variable database, ahora acepta a cualquier database
+que implemente la interfaz DataBase
 ![imagen](src/images/preg34_userInterface.png)
-clase Cliente
+clase Cliente, muestra un código ejemplo para demostrar el funcionamiento exitoso del código.
 ![imagen](src/images/preg34_client.png)
 
 Explica los resultados.¿El programa resuelve todos los posibles problemas del programa que
@@ -302,18 +307,29 @@ no usa DIP?
 > modificar ni la interfaz, ni la db Oracle, por lo que vemos que ya se ha solucionado el problema de la dependencia de 
 > InterfazUsuario con respecto a OracleDatabase, además se vio que facilmente la InterfazUsuario puede usar una u otra
 > db sin problema alguno, lo que tambien muestra que otro de los problemas relacionados a implementacion se han 
-> solucionado, además las pruebas no estan sujetas a si la db este implementada porque se usa una interfaz.
+> solucionado, además de haber disminuido el acoplamiento y que las pruebas no estan sujetas a si la db este implementada porque se usa una interfaz.
 > En resumen, esto nos muestra que usando DIP pudimos solucionar los problemas que mencionamos anteriormente.
 
 Ejecución exitosa de nuestro nuevo código usando DIP
 ![imagen](src/images/preg34_output.png)
 
-## Pregunta 35
-## Pregunta 36
+## Pregunta 35: Encuentra alguna excepción a esta sugerencia.
+> Como vimos acá, la implementación da muchas facilidades, pero por ejemplo, si queremos que se pueda cambiar sin 
+> necesidad de que tengamos que volver a instanciar por algun impedimente que podamos tener en el número de instancias,
+> entonces tendríamos que implementar un método para poder setear la db cuando la interfaz ya esta instanciada y que nos
+> permita cambiar la db en cualquier momento.
+## Pregunta 36: El constructor de la clase InterfazUsuario acepta un parámetro de base de datos. Proporciona una instalación adicional a un usuario cuando utiliza tanto el constructor como el método setter (setDatabase) dentro de esta clase. ¿Cuál es el beneficio?.
+Se han realizado las siguientes implementaciones
 
+Se ha hecho publico el atributo database y se han creado sus métodos getter y setter
+![imagen](src/images/preg36_interface.png)
+se ha colocado la linea de demostracion en el cliente
+![imagen](src/images/preg36_client.png)
 
+> Como se menciono, el beneficio es que podemos cambiar la db que la interfaz este usando sin tener que cambiar de
+> instancia de interfaz de usuario. Por lo que que si tienes limitaciones en el número de instancias, con esto se
+> solucionaria, o simplemente te permite cambiar en cualquier momento la db. Además de brindar otra alternativa de
+> poder setear la db.
 
-
-Pregunta 1
-Pregunta 2
-Pregunta 3
+Ejecución del nuevo codigo de manera exitosa.
+![imagen](src/images/preg36_output.png)
