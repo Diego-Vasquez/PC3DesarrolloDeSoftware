@@ -252,7 +252,21 @@ la instancia de la bd), que para este caso solo hace una impresión de consola d
 > de OracleDatabase previa para probar el funcionanmiento de InterfazUsuario. También es evidente de que ante un cambio 
 > que se de en la clase OracleDatabase (como el cambiar ciertas funcionalidades o el querer usar otra db) harían que
 > también se vea afectada.
-## Pregunta 33
+## Pregunta 33: Implementa la clase InterfazUsuario. La segunda parte del DIP sugiere hacer la interfaz de la base de datos considerando la necesidad de la clase InterfazUsuario.
+Hemos realizado las siguientes implementaciones de la interface BaseDatos y la implementación OracleDatabase
+![imagen](src/images/preg33_interface.png)
+![imagen](src/images/preg33_oracledb.png)
+> Acá tenemos la implementación usando el principio SOLID de DIP, donde por un lado
+> nosotros aca aseguramos con esta implementación que la clase interfaz usuario ahora ya no dependa 
+> de la clase OracleJava, sino que bajo la abstracción (primera parte del princio DIP) permite
+> que esto sea mas flexible a los cambios, dado que ahora solo hace uso de la abstracción, la cual es
+> implementada por la base Oracle y puede ser implementada por cualuier otra clase y podra tener mas garantias
+> de que el software no se caerá tan facil
+>
+> Por otro lado tenemos que también aplicamos la segunda parte de DIP, dado que hacemos que los detalles dependan de 
+> la abstracción, en este caso los detalles como de que sea publica se realiza dentro de la implementacion. Lo que en 
+> resumen esta nueva implementación es mucho mejor.
+
 ## Pregunta 34
 ## Pregunta 35
 ## Pregunta 36
