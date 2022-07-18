@@ -160,7 +160,8 @@ Se crea una lista de tipo impresora en cual guardara los métodos de cada una de
 ![imagen](https://user-images.githubusercontent.com/79879867/179445088-3ddf5b79-a8c1-43a9-864d-dbf40550b5bf.png)
 
 ## Pregunta 28
-Un método predeterminado  nos permite definir una implementación predeterminada para un método interfaz. Básicamente es proporcionar un medio por el cual las interfaces pudieran expandirse sin romper el código que existe.
+
+Cada vez que agrega un método en la clase base (o interfaz), el método debe implementarse (o estar disponible para su uso) en las clases derivadas. Este tipo de práctica puede violar OCP y LSP, lo que a su vez provoca problemas de mantenimiento y reutilización difíciles.
 
 ## Pregunta 29
 Un método predeterminado de la interfaz se define de forma similar a la forma en que una clase define un método. La principal diferencia es que la declaración está precedida por la palabra clave default. Por ejemplo, considere esta interfaz simple
