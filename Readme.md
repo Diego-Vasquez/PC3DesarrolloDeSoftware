@@ -50,6 +50,25 @@ La clase tiene mucha lógica interconectada en la cual nos costaría mucho corre
 
 ## Pregunta 4
 
+![imagen](src/images/preg4.jpeg)
+
+Demostracion de SRP  
+Nombre del empleado: Abejita,Jessica  
+Este empleado tiene 7.5 años de experiencia.  
+El ID del empleado es: J185  
+Este empleado es un empleado senior  
+
+*******
+
+Nombre del empleado: Smart,Chalito  
+Este empleado tiene 3.2 años de experiencia.  
+El ID del empleado es: C196  
+Este empleado es un empleado junior  
+  
+Process finished with exit code 0  
+
+Podemos ver que son imprime un formato parecido a cuando no aplicamos Single Responsibility Principle; sin embargo, como dijimos antes, ahora nos será mucho más fácil hacer cambios en el código, además de que la lógica es más fácil de entender.
+
 # Modulo 2
 ## Pregunta 5
 
