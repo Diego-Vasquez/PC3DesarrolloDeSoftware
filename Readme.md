@@ -14,6 +14,8 @@
 # Modulo 1
 ##Pregunta 1
 
+![imagen](src/images/preg1.jpeg)
+
 Demostracion sin SRP  
 Nombre del empleado: Abejita,Jessica  
 Este empleado tiene 7.5 años de experiencia.  
