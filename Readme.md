@@ -286,7 +286,28 @@ Hemos realizado las siguientes implementaciones de la interface BaseDatos y la i
 > la abstracción, en este caso los detalles como de que sea publica se realiza dentro de la implementacion. Lo que en
 > resumen esta nueva implementación es mucho mejor.
 
-## Pregunta 34
+## Pregunta 34: Completa todos los archivos siguientes de la sección SOLID
+Se hicieron las siguientes implementaciones
+
+clase MySQLDataBase
+![imagen](src/images/preg34_mysqldb.png)
+clase InterfazUsuario
+![imagen](src/images/preg34_userInterface.png)
+clase Cliente
+![imagen](src/images/preg34_client.png)
+
+Explica los resultados.¿El programa resuelve todos los posibles problemas del programa que
+no usa DIP?
+> Como se vio en este caso, ahora hemos implementado la db en MySQL usando la interfaz dada, por lo que no tuvimos que
+> modificar ni la interfaz, ni la db Oracle, por lo que vemos que ya se ha solucionado el problema de la dependencia de 
+> InterfazUsuario con respecto a OracleDatabase, además se vio que facilmente la InterfazUsuario puede usar una u otra
+> db sin problema alguno, lo que tambien muestra que otro de los problemas relacionados a implementacion se han 
+> solucionado, además las pruebas no estan sujetas a si la db este implementada porque se usa una interfaz.
+> En resumen, esto nos muestra que usando DIP pudimos solucionar los problemas que mencionamos anteriormente.
+
+Ejecución exitosa de nuestro nuevo código usando DIP
+![imagen](src/images/preg34_output.png)
+
 ## Pregunta 35
 ## Pregunta 36
 
