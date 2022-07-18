@@ -37,6 +37,11 @@ El método CheckSeniority() de la clase Empleado revisar si la experiencia del e
 También vemos que el método generateEmpId() de la clase Empleado genera ID's de los empleados de la siguiente forma, primero toma la primera letra del nombre del empleado y luego lo une a un número random menor a mil.  
 
 ## Pregunta 2
+
+Podemos ver que los metodos displayEmpDetail(), checkSeniority() y generateEmpId() están en una sola clase, lo cual hace que no cumpla la idea detrás del SRP (que cada clase, módulo o función en un programa debe tener una responsabilidad/propósito en un programa)
+Es decir, la clase Empleado tienes tres responsabilidades, mostrar los detalles de un empleado, generar una identificación de empleado y revisar los años de experiencia del empleado. El código funcionará bien, pero dará lugar a algunos desafíos. No podemos hacer que este código sea reutilizable para otras clases u objetos.
+La clase tiene mucha lógica interconectada en la cual nos costaría mucho corregir los errores, además de que a medida que crece el código, también lo hace la lógica, lo que hace que sea aún más difícil entender lo que está pasando.
+
 ## Pregunta 3
 ## Pregunta 4
 
